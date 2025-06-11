@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code with Sukhnam - Software Store</title>
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --dark: #222;
+      --light: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: white;
+      margin-top: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .product p {
+      font-size: 0.9rem;
+    }
+
+    .about,
+    .contact {
+      background: white;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input,
+    textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Code with Sukhnam</h1>
+    <p>Buy quality software & tools built by an expert</p>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to My Software Store</h2>
+    <p>Explore my collection of powerful, user-friendly software made for developers, students, and businesses.</p>
+  </section>
+
+  <section id="products">
+    <h2>🛍️ Our Products</h2>
+    <div class="products">
+      <div class="product">
+        <h3>Python Automation Tool</h3>
+        <p>Automate repetitive tasks using this custom-built Python script bundle.</p>
+        <p><strong>₹299</strong></p>
+      </div>
+      <div class="product">
+        <h3>Website Starter Kit</h3>
+        <p>HTML, CSS, JS templates to kickstart your website development journey.</p>
+        <p><strong>₹199</strong></p>
+      </div>
+      <div class="product">
+        <h3>Data Science Dashboard</h3>
+        <p>A clean and interactive dashboard template for data visualizations.</p>
+        <p><strong>₹399</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>👨‍💻 About Me</h2>
+    <p>Hi, I'm <strong>Sukhnam Singh Gill</strong>, a BCA student at CT University specializing in AI and Data Science. I'm from Badhni Kalan, Punjab, and have over 4 years of programming experience.</p>
+    <p>I specialize in web development, Python scripting, data analytics, and UI design. I’ve built tools that help automate tasks, build dashboards, and create beautiful websites. You can also find my work on my YouTube channel <strong>“Code with Sukhnam”</strong>.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>📞 Contact Me</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Code with Sukhnam | Email: sukhnam23@gmail.com</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Thank you for contacting! I will get back to you soon.');
+    }
+  </script>
+</body>
+</html>
