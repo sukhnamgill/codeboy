@@ -3,187 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        footer {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    footer a {
-      color: #00c6ff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-        #heading {
-            text-align: center;
-            margin-top: 50px;
-            padding: 5px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            
-            /* border: 2px solid rgb(131, 131, 174); */
-            background:linear-gradient(to right, rgb(34, 141, 242), rgb(66, 66, 66));
-            color:white;
-            
-            /* border-radius: 5px; */
-        }
-          .navlink a {
-            text-decoration: none;
-            color: rgb(36, 29, 29);
-            padding: 10px;
-            font-size: 20px;
-            background-color: white;
-            border-radius: 3px;
-            margin-bottom: 5px;
-        }
-        .navlink a:hover {
-                font-size:30px;
-                
-                
-                transition: 0.3s;
-            }
-        #banner {
-            width: 25%;
-            height: 25%;
-            object-fit: cover;
-        }
-        .pic_can {
-            display: flex;
-            flex-direction: row;
-            
-            margin-top: 10px;
-        }
-        .slideshow {
-            display: flex;
-            flex-direction: row;
-            border: 2px solid rgb(255, 255, 255);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px;
-            margin-left: 2px;
-            width: 100%;
-            height: auto;
-            background: linear-gradient(to right, rgb(113, 185, 253), rgb(242, 176, 251));
-            margin-top: 20px;
-            text-align: center;
-            /* padding-top: 50px; */
-            color: white;
-        }
-        .itemOfSlide {
-            width: 100%;
-            height: 100%;
-            display: block;
-            justify-content: center;
-            align-items: center;
-            /* font-size: 30px; */
-            border: 1px solid white;
-            border-radius: 10px;
-            background-color: white;
-            color: black;
-            margin: 5px;
-            padding: 10px;
-        }
-        .itemimg {
-            width: 40%;
-            height: 30%;
-            object-fit: cover;
-        }
-
+    <title>CODE_BOY; SUKHNAM - Software Store</title>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    body{font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #3498db; /* A fresh blue */
+            --secondary-color: #2c3e50; /* A dark, sleek grey */
+            --accent-color: #e74c3c; /* A vibrant red for attention */
+            --background-color: #f4f6f9; /* A light, clean grey background */
+            --text-color: #333;
+            --card-background: #ffffff;
+            --footer-background: #212529;
+        }
 
-    /* reponsive
-     */
-        @media (max-width: 768px) {
-            #heading {
-                font-size: 20px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* --- Header & Navigation --- */
+        .site-header {
+            background-color: var(--card-background);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main-nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            padding: 80px 0;
+            text-align: left;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            font-size: 3em;
+            color: white;
+            margin-top: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 60px 0;
+        }
+
+        .features .container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-card {
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex-basis: 30%;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* --- Featured Software Section --- */
+        .software-grid {
+            padding: 60px 0;
+            background-color: var(--card-background);
+        }
+
+        .software-grid h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .software-card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .software-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-icon-container {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon {
+            font-size: 40px;
+        }
+
+        .card-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-button:hover {
+            background-color: #2980b9;
+        }
+
+
+        /* --- Footer --- */
+        .site-footer {
+            background-color: var(--footer-background);
+            color: #ccc;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .site-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: #fff;
+        }
+
+        .contact-info {
+            margin: 10px 0;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
             }
-            .navlink a {
-                font-size: 15px;
-                margin: auto;
-            }
-            .navlink{
-                display: flex;
-                flex-direction: row;
-                
-            }
-            #banner {
-                width: 100%;
-                height: 50%;
-            }
-            .pic_can {
+
+            .features .container {
                 flex-direction: column;
                 align-items: center;
-
             }
-            .slideshow {
+        }
+        
+        @media (max-width: 768px) {
+            .site-header .container {
                 flex-direction: column;
-                padding: 10px;
-                left: 0%;
             }
-            .itemOfSlide {
-                width: auto;
-                margin: 5px ;
+
+            .main-nav {
+                margin-top: 15px;
+            }
+            .main-nav a {
+                margin: 0 10px;
+            }
+            .hero-text h2 {
+                font-size: 2.5em;
             }
         }
-        #banner_page {
-            margin-left: 10px;
-        }
-
-
-
-
     </style>
 </head>
 <body>
-    <div id="heading"><h1>CODE_BOY; SUKHNAM</h1>
-    <div class="navlink"><a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="software.html">Software</a>
-        <a href="sukhnam.html">Sukhnam</a>
-    </div></div>
-   <div class="pic_can"><img id="banner" src="man.gif" alt="fig"><div id="banner_page"><h1 style="color: #2c3e50; text-align: center;"><b>Welcome to the Software Store!</b></h1>
 
-    <p style="color: #4b0082; font-size: 18px; text-align: center;">
-        <span style="color: #e74c3c;"><b>Created by Sukhnam</b></span>, this platform is your one-stop destination for all kinds of 
-        <span style="color: #27ae60;"><b>useful software tools</b></span>. Whether you're a student, developer, or tech enthusiast, 
-        you'll find something <span style="color: #f39c12;"><b>exciting and powerful</b></span> here. Enjoy a 
-        <span style="color: #2980b9;"><b>smooth and colorful</b></span> experience as you explore our collection!
-    </p>
-</div></div>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">CODE_BOY; SUKHNAM</h1>
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#featured-software">Software</a>
+                <a href="#contact">Sukhnam</a>
+            </nav>
+        </div>
+    </header>
 
-   <!-- slide show  -->
-    <div class="slideshow">
-        <div class="itemOfSlide"><h1>SPEED<img class="itemimg" src="download.gif" alt=""></h1> <p style="color: #333; font-size: 18px;">
-            Our software delivers <b>lightning-fast performance</b>, ensuring smooth navigation and instant loading. Powered by Python, it's built to respond quickly and handle tasks efficiently without delays.
-        </p></div>
-        <div class="itemOfSlide"><h1>Machine Learning<img class="itemimg" src="ai.gif" alt=""></h1><p style="color: #333; font-size: 18px;">
-            Integrated <b>machine learning</b> allows the app to adapt and recommend tools based on your behavior. Sukhnam’s smart logic makes your experience more personalized, smarter, and future-ready.
-        </p></div>
-        <div class="itemOfSlide"><h1>Security<img class="itemimg" src="safe.gif" alt=""></h1><h2 style="color: #27ae60; font-size: 24px;">
-        <p style="color: #333; font-size: 18px;">
-            Your data is safe with <b>advanced security features</b>. Sukhnam has implemented secure coding and encryption methods to protect your information at every level of the system.
-        </p></div>
+    <main>
+        <!-- Hero Banner Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>Welcome to the Future of Software</h2>
+                    <p>Created by Sukhnam, this is your one-stop destination for powerful, fast, and secure software tools designed for everyone.</p>
+                    <a href="#featured-software" class="cta-button">Explore Our Software</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://placehold.co/500x300/00f2fe/ffffff?text=Developer+Vibes" alt="Developer illustration">
+                </div>
+            </div>
+        </section>
 
-    </div>
-<footer>
-  <p>&copy; 2025 Sukhnam Singh Gill. All rights reserved.</p>
-  <p>
-    Contact: <a href="mailto:sukhnam23@gmail.com">sukhnam23@gmail.com</a> |
-    Phone: <a href="tel:+918544855437">+91 85448 55437</a>
-  </p>
-  <p>
-    <a href="https://youtube.com/@codewithsukhnam" target="_blank">YouTube</a> |
-    <a href="https://www.instagram.com/sukhnam04/?hl=en">Instagram</a> |
-    <a href="https://github.com/sukhnamgill">GitHub</a>
-  </p>
-</footer>
-    
+        <!-- Features Section (Your old slideshow) -->
+        <section class="features" id="about">
+            <div class="container">
+                <div class="feature-card">
+                    <img class="feature-icon" src="https://placehold.co/80x80/3498db/ffffff?text=⚡" alt="Speed icon">
+                    <h3>Lightning Speed</h3>
+                    <p>Our software is optimized for performance, ensuring a smooth and efficient experience without delays.</p>
+                </div>
+                <div class="feature-card">
+                    <img class="feature-icon" src="https://placehold.co/80x80/2ecc71/ffffff?text=🧠" alt="AI icon">
+                    <h3>Machine Learning</h3>
+                    <p>Integrated with smart logic to adapt and provide a more personalized, future-ready experience.</p>
+                </div>
+                <div class="feature-card">
+                    <img class="feature-icon" src="https://placehold.co/80x80/e74c3c/ffffff?text=🛡️" alt="Security icon">
+                    <h3>Advanced Security</h3>
+                    <p>Built with secure coding and encryption methods to protect your information at every level.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ⭐ New Featured Software Section -->
+        <section id="featured-software" class="software-grid">
+            <div class="container">
+                <h2>Featured Software</h2>
+                <div class="grid-container">
+                    <!-- Software Card 1 -->
+                    <div class="software-card">
+                        <div class="card-icon-container">
+                             <span class="card-icon">🚀</span>
+                        </div>
+                        <h3>Project Velocity</h3>
+                        <p>A smart task manager that uses AI to predict project deadlines and organize your workflow.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                    <!-- Software Card 2 -->
+                    <div class="software-card">
+                         <div class="card-icon-container">
+                             <span class="card-icon">🎨</span>
+                        </div>
+                        <h3>Pixel Perfecter</h3>
+                        <p>An intuitive image editor with machine learning filters to enhance your photos effortlessly.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                    <!-- Software Card 3 -->
+                    <div class="software-card">
+                         <div class="card-icon-container">
+                             <span class="card-icon">🛡️</span>
+                        </div>
+                        <h3>Secure Shield VPN</h3>
+                        <p>Protect your online privacy with our high-speed, encrypted, and easy-to-use VPN service.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                     <!-- Software Card 4 -->
+                    <div class="software-card">
+                        <div class="card-icon-container">
+                             <span class="card-icon">🎵</span>
+                        </div>
+                        <h3>Audio Weaver</h3>
+                        <p>Compose and edit audio with professional-grade tools, powered by an intuitive interface.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                     <!-- Software Card 5 -->
+                    <div class="software-card">
+                         <div class="card-icon-container">
+                             <span class="card-icon">📈</span>
+                        </div>
+                        <h3>Data Visualizer</h3>
+                        <p>Turn complex datasets into beautiful, interactive charts and graphs with just a few clicks.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                     <!-- Software Card 6 -->
+                    <div class="software-card">
+                         <div class="card-icon-container">
+                             <span class="card-icon">✍️</span>
+                        </div>
+                        <h3>Focus Writer</h3>
+                        <p>A distraction-free writing environment to help you focus on what matters: your words.</p>
+                        <a href="#" class="card-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 Sukhnam Singh Gill. All rights reserved.</p>
+            <p class="contact-info">
+                Contact: <a href="mailto:sukhnam23@gmail.com">sukhnam23@gmail.com</a> |
+                Phone: <a href="tel:+918544855437">+91 85448 55437</a>
+            </p>
+            <div class="social-links">
+                <a href="https://youtube.com/@codewithsukhnam" target="_blank">YouTube</a> |
+                <a href="https://www.instagram.com/sukhnam04/?hl=en" target="_blank">Instagram</a> |
+                <a href="https://github.com/sukhnamgill" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
