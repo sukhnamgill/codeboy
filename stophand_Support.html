@@ -3,248 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StopHand – Quit Bad Habits</title>
-  <meta name="description" content="StopHand helps you identify and quit habits you want to stop. Add habits, track intent, and stay mindful." />
+  <title>StopHand – App Support</title>
+  <meta name="description" content="Official support page for the StopHand app. Get help, report issues, or contact the developer." />
   <style>
-    :root {
-      --bg: #0f172a;        /* slate-900 */
-      --card: #111827;      /* gray-900 */
-      --text: #e5e7eb;      /* gray-200 */
-      --muted: #9ca3af;     /* gray-400 */
-      --accent: #22c55e;    /* green-500 */
-      --danger: #ef4444;    /* red-500 */
-    }
-
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #020617, var(--bg));
-      color: var(--text);
-      min-height: 100vh;
+      background: #0f172a;
+      color: #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
       padding: 20px;
     }
 
     .container {
+      max-width: 640px;
       width: 100%;
-      max-width: 720px;
-      background: rgba(17, 24, 39, 0.9);
-      border-radius: 20px;
+      background: #020617;
+      border-radius: 18px;
+      padding: 28px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      overflow: hidden;
-    }
-
-    header {
-      padding: 28px 24px;
-      text-align: center;
-      background: radial-gradient(1200px 200px at 50% -50%, rgba(34,197,94,0.25), transparent);
-    }
-
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 2rem;
-      letter-spacing: 0.3px;
-    }
-
-    header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    main { padding: 24px; }
-
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 20px;
       border: 1px solid rgba(255,255,255,0.06);
     }
 
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: 1.25rem;
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
     }
 
-    form {
-      display: grid;
-      gap: 12px;
+    p {
+      line-height: 1.6;
+      color: #cbd5f5;
     }
 
-    label {
-      font-size: 0.9rem;
-      color: var(--muted);
+    .section {
+      margin-top: 24px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #020617;
-      color: var(--text);
-      font-size: 0.95rem;
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
 
-    input::placeholder, textarea::placeholder { color: #6b7280; }
-
-    textarea { resize: vertical; min-height: 80px; }
-
-    button {
-      padding: 12px 16px;
-      border-radius: 12px;
-      border: none;
-      background: var(--accent);
-      color: #052e16;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.05s ease, box-shadow 0.15s ease;
-      box-shadow: 0 10px 20px rgba(34,197,94,0.25);
+    a {
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    button:hover { box-shadow: 0 14px 26px rgba(34,197,94,0.35); }
-    button:active { transform: translateY(1px); }
-
-    .habit-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .habit-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 16px;
-      border-radius: 12px;
+    .card {
       background: #020617;
       border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .habit-text {
-      max-width: 80%;
-    }
-
-    .habit-text strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .habit-text span {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .remove {
-      background: transparent;
-      color: var(--danger);
-      border: 1px solid rgba(239,68,68,0.4);
-      padding: 8px 12px;
-      border-radius: 10px;
-      font-size: 0.85rem;
-      cursor: pointer;
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 12px;
     }
 
     footer {
+      margin-top: 28px;
       text-align: center;
-      padding: 16px 20px 24px;
-      color: var(--muted);
       font-size: 0.85rem;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.6rem; }
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>StopHand ✋</h1>
-      <p>Choose the habit you want to quit. Awareness is the first step.</p>
-    </header>
+    <h1>StopHand ✋ Support</h1>
 
-    <main>
-      <div class="card">
-        <h2>Add a Habit to Quit</h2>
-        <form id="habitForm">
-          <div>
-            <label for="habitName">Habit name</label>
-            <input id="habitName" type="text" placeholder="e.g. Excessive phone usage" required />
-          </div>
-          <div>
-            <label for="habitReason">Why do you want to quit? (optional)</label>
-            <textarea id="habitReason" placeholder="Health, focus, confidence…"></textarea>
-          </div>
-          <button type="submit">Add Habit</button>
-        </form>
-      </div>
+    <p>
+      Welcome to the official support page for <strong>StopHand</strong>.
+      This app helps users become aware of habits they want to quit and take mindful steps toward change.
+    </p>
 
+    <div class="section">
+      <h2>📩 Contact Support</h2>
       <div class="card">
-        <h2>Your Quit List</h2>
-        <ul id="habitList" class="habit-list"></ul>
+        <p>
+          If you have questions, suggestions, or experience any issues while using StopHand, please contact us:
+        </p>
+        <p>
+          📧 Email: <a href="mailto:sukhnam23@gmail.com">sukhnam23@gmail.com</a>
+        </p>
       </div>
-    </main>
+    </div>
+
+    <div class="section">
+      <h2>🐞 Report a Bug</h2>
+      <div class="card">
+        <p>
+          When reporting a bug, please include:
+        </p>
+        <ul>
+          <li>Your iOS version</li>
+          <li>Device model</li>
+          <li>What you were doing when the issue occurred</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔐 Privacy</h2>
+      <div class="card">
+        <p>
+          StopHand does not collect or store any personal data on external servers.
+          All habit information remains on your device.
+        </p>
+      </div>
+    </div>
 
     <footer>
-      <p>StopHand is a mindful habit-breaking companion app.<br />
-      Need help? <a href="mailto:sukhnam23@gmail.com">Contact Support</a></p>
+      <p>© 2026 StopHand App</p>
     </footer>
   </div>
-
-  <script>
-    const form = document.getElementById('habitForm');
-    const list = document.getElementById('habitList');
-
-    // Load saved habits
-    const habits = JSON.parse(localStorage.getItem('stophand_habits') || '[]');
-    habits.forEach(renderHabit);
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('habitName').value.trim();
-      const reason = document.getElementById('habitReason').value.trim();
-      if (!name) return;
-
-      const habit = { id: Date.now(), name, reason };
-      habits.push(habit);
-      localStorage.setItem('stophand_habits', JSON.stringify(habits));
-      renderHabit(habit);
-      form.reset();
-    });
-
-    function renderHabit(habit) {
-      const li = document.createElement('li');
-      li.className = 'habit-item';
-      li.innerHTML = `
-        <div class="habit-text">
-          <strong>${habit.name}</strong>
-          <span>${habit.reason || 'No reason added'}</span>
-        </div>
-        <button class="remove">Remove</button>
-      `;
-
-      li.querySelector('.remove').addEventListener('click', () => {
-        const index = habits.findIndex(h => h.id === habit.id);
-        if (index > -1) habits.splice(index, 1);
-        localStorage.setItem('stophand_habits', JSON.stringify(habits));
-        li.remove();
-      });
-
-      list.appendChild(li);
-    }
-  </script>
 </body>
 </html>
