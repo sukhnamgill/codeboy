@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Verification</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .box{
+            width:400px;
+            margin:auto;
+            padding:20px;
+            border:2px solid #333;
+            border-radius:10px;
+        }
+
+        .verified{
+            color:green;
+            font-size:30px;
+        }
+
+        .invalid{
+            color:red;
+            font-size:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box" id="result">
+
+</div>
+
+<script>
+
+const certificates = {
+    "SD001": {
+        name: "Sukhnam Singh Gill",
+        course: "iOS App Development",
+        date: "23 May 2026"
+    },
+
+    "SD002": {
+        name: "Aman Singh",
+        course: "Python Devel",
+        date: "20 May 2026"
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+const result = document.getElementById("result");
+
+if(certificates[id]){
+
+    result.innerHTML = `
+        <h1 class="verified">✅ VERIFIED</h1>
+        <h2>${certificates[id].name}</h2>
+        <p>Course: ${certificates[id].course}</p>
+        <p>Issue Date: ${certificates[id].date}</p>
+        <p>Certificate ID: ${id}</p>
+    `;
+
+}else{
+
+    result.innerHTML = `
+        <h1 class="invalid">❌ INVALID CERTIFICATE</h1>
+    `;
+}
+
+</script>
+
+</body>
+</html>
